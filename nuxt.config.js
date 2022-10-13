@@ -25,6 +25,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/axios.plugin.js',
+    '~/plugins/api.plugin.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -38,6 +40,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -57,6 +60,11 @@ export default {
         }
       }
     }
+  },
+
+  axios: {
+    baseURL: 'https://shazam-core.p.rapidapi.com/v1',
+    retry: 2
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
