@@ -78,6 +78,10 @@
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  created () {
+    this.$chartAPI.getTopCharts();
+    //this.$axios.get('https://shazam-core.p.rapidapi.com/v1/charts/world')
+  },
 }
 </script>
