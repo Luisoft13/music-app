@@ -1,7 +1,7 @@
-export default function ({ $axios, redirect }) {
+export default function ({ $axios, $config }) {
   $axios.onRequest((config) => {
-    config.headers.common['X-RapidAPI-Key'] = '8fe341bed8mshe67d8a9a9771c07p126c00jsnb18d44dd4abc';
-    config.headers.common['X-RapidAPI-Host'] = 'shazam-core.p.rapidapi.com';
+    config.headers.common['X-RapidAPI-Key'] = $config.rapidapiKey;
+    config.headers.common['X-RapidAPI-Host'] = $config.rapidapiHost;
     config.headers.common['Access-Control-Allow-Origin'] = '*';
   })
 

@@ -1,6 +1,15 @@
 import colors from 'vuetify/es5/util/colors'
 
+const apiBaseUrl = process.env.API_BASE_URL || null
+const rapidapiHost = process.env.RAPIDAPI_HOST || null
+const rapidapiKey = process.env.RAPIDAPI_KEY || null
+
 export default {
+  publicRuntimeConfig: {
+    apiBaseUrl,
+    rapidapiHost,
+    rapidapiKey
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - music-app',
@@ -63,7 +72,7 @@ export default {
   },
 
   axios: {
-    baseURL: 'https://shazam-core.p.rapidapi.com/v1',
+    baseURL: apiBaseUrl,
     retry: 2
   },
 
